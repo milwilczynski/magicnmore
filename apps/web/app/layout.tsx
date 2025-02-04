@@ -1,18 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
 import "@workspace/ui/globals.css";
 import { Providers } from "@/components/providers";
-import { Navigation } from "@/components/navigation";
-
-const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
+import "./global.css";
+import { fontMono, fontSans } from "@/lib/font-loader";
+import { Navbar1 } from "@/components/navigation";
 
 export default function RootLayout({
   children,
@@ -25,7 +15,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
         <Providers>
-          <Navigation />
+          <Navbar1 />
           {children}
         </Providers>
       </body>
