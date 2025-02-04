@@ -146,7 +146,7 @@ const Navbar1 = ({
   },
 }: Navbar1Props) => {
   return (
-    <section className="py-4">
+    <section className="py-4 bg-white/80 sticky top-0 z-50 w-full">
       <div className="contain-layout px-2">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
@@ -236,7 +236,10 @@ const Navbar1 = ({
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <NavigationMenuItem key={item.title} className="text-muted-foreground">
+      <NavigationMenuItem
+        key={item.title}
+        className="text-muted-foreground bg-transparent"
+      >
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="w-80 p-3">

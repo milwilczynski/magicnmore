@@ -12,10 +12,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <Providers>
           <Navbar1 />
+          <div className={"h-[400px] w-full"}></div>
+          <div className={"h-[400px] w-full bg-white"}></div>
           {children}
         </Providers>
       </body>
