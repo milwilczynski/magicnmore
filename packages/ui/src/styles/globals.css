@@ -2,64 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     :root {
-        --gradient: linear-gradient(to top left, #CC95C0, #DBD4B4, #7AA1D2);
-        --background: 274 100% 100%;
-        --foreground: 274 5% 10%;
-        --card: 274 50% 100%;
-        --card-foreground: 274 5% 15%;
-        --popover: 274 100% 100%;
-        --popover-foreground: 274 100% 10%;
-        --primary: 274 72% 67.8%;
+        --background: 0 0% 100%;
+        --foreground: 280 19% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 280 19% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 280 19% 12%;
+        --primary: 278 100% 55%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 274 30% 90%;
+        --secondary: 19 100% 64%;
         --secondary-foreground: 0 0% 100%;
-        --muted: 236 30% 95%;
-        --muted-foreground: 274 5% 40%;
-        --accent: 236 30% 90%;
-        --accent-foreground: 274 5% 15%;
-        --destructive: 0 100% 50%;
-        --destructive-foreground: 274 5% 100%;
-        --border: 274 30% 82%;
-        --input: 274 30% 50%;
-        --ring: 274 72% 67.8%;
-        --radius: 0.5rem;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
+        --muted: 220 14% 96%;
+        --muted-foreground: 280 9% 45%;
+        --accent: 220 14% 96%;
+        --accent-foreground: 278 100% 50%;
+        --destructive: 12 100% 46%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 13% 91%;
+        --input: 279 11% 69%;
+        --ring: 282 100% 43%;
+        --chart-1: 278 100% 50%;
+        --chart-2: 68 100% 50%;
+        --chart-3: 128 100% 50%;
+        --chart-4: 248 100% 50%;
+        --chart-5: 308 100% 50%;
+        --radius: 0.75rem;
     }
 
     .dark {
-        --background: 274 50% 10%;
-        --foreground: 274 5% 100%;
-        --card: 274 50% 10%;
-        --card-foreground: 274 5% 100%;
-        --popover: 274 50% 5%;
-        --popover-foreground: 274 5% 100%;
-        --primary: 274 72% 67.8%;
-        --primary-foreground: 0 0% 0%;
-        --secondary: 274 30% 20%;
+        --background: 0 0% 9%;
+        --foreground: 0 0% 95%;
+        --card: 0 0% 13%;
+        --card-foreground: 0 0% 95%;
+        --popover: 0 0% 13%;
+        --popover-foreground: 0 0% 95%;
+        --primary: 278 100% 41%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 19 100% 64%;
         --secondary-foreground: 0 0% 100%;
-        --muted: 236 30% 25%;
-        --muted-foreground: 274 5% 65%;
-        --accent: 236 30% 25%;
-        --accent-foreground: 274 5% 95%;
-        --destructive: 0 100% 50%;
-        --destructive-foreground: 274 5% 100%;
-        --border: 274 30% 50%;
-        --input: 274 30% 50%;
-        --ring: 274 72% 67.8%;
-        --radius: 0.5rem;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        --muted: 0 0% 31%;
+        --muted-foreground: 0 0% 70%;
+        --accent: 0 0% 100%;
+        --accent-foreground: 0 0% 95%;
+        --destructive: 346 100% 42%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 33%;
+        --input: 0 0% 43%;
+        --ring: 282 100% 43%;
+        --chart-1: 278 100% 50%;
+        --chart-2: 68 100% 50%;
+        --chart-3: 128 100% 50%;
+        --chart-4: 248 100% 50%;
+        --chart-5: 308 100% 50%;
     }
 }
+
 
 @layer base {
     * {
@@ -72,6 +72,10 @@
 }
 
 .bg-gradient-local {
+    background: radial-gradient(#f9f871, #ffffff, #ffa274);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s ease infinite;
+    opacity: 20%;
 }
 
 /*best so far*/
@@ -82,19 +86,18 @@
 /*}*/
 
 body {
-    background: linear-gradient(to right top, #e9d5f8, #ffffff, #ffe0ca);
-    /*animation: gradient-animation 30s ease infinite;*/
-    background-size: 300% 300%;
+    background-image: linear-gradient(to left top, #a000ff, #ec00c1, #ff118f, #ff5e71, #f28a6c, #ed956e, #e8a072, #e3aa79, #eaa16a, #f1985d, #f88d52, #ff8148);
 }
+
 
 @keyframes gradient-animation {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 25%;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 50% 25%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 25%;
     }
 }

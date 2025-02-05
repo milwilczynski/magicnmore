@@ -14,12 +14,16 @@ export default function RootLayout({
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
+        {/*<div className={"w-full h-full bg-gradient-local absolute"} />*/}
+        {/*<div className={"contain-layout absolute w-full min-h-full"}>*/}
         <Providers>
           <Navbar1 />
           <div className={"h-[400px] w-full"}></div>
           <div className={"h-[400px] w-full bg-white"}></div>
+          <div className={"h-[400px] w-full"}></div>
           {children}
         </Providers>
+        {/*</div>*/}
       </body>
     </html>
   );

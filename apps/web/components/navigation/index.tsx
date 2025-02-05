@@ -1,4 +1,12 @@
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import {
+  Book,
+  Menu,
+  ShoppingCart,
+  Sunset,
+  Trees,
+  User2,
+  Zap,
+} from "lucide-react";
 
 import {
   Accordion,
@@ -22,6 +30,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@workspace/ui/components/sheet";
+import { fontKindAvenue } from "@/lib/font-loader";
 
 interface MenuItem {
   title: string;
@@ -146,40 +155,44 @@ const Navbar1 = ({
   },
 }: Navbar1Props) => {
   return (
-    <section className="py-4 bg-white/80 sticky top-0 z-50 w-full">
+    <section className="py-4 bg-white sticky top-0 z-50 w-full">
       <div className="contain-layout px-2">
         <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-6">
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold">{logo.title}</span>
-            </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
+          <div className="flex items-center">
+            <span
+              className={`${fontKindAvenue.className} text-3xl font-extralight `}
+            >
+              Magic & more
+            </span>
+          </div>
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.text}</a>
+            <Button variant={"ghost"} size="icon">
+              <ShoppingCart />
             </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.text}</a>
+            <Button variant="ghost" size="icon">
+              <User2 />
             </Button>
           </div>
         </nav>
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold">{logo.title}</span>
+              <span
+                className={`${fontKindAvenue.className} text-3xl font-extralight `}
+              >
+                Magic & more
+              </span>
             </a>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="ghost" size="icon">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
@@ -187,9 +200,10 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="w-8" alt={logo.alt} />
-                      <span className="text-lg font-semibold">
-                        {logo.title}
+                      <span
+                        className={`${fontKindAvenue.className} text-3xl font-extralight`}
+                      >
+                        Magic & more
                       </span>
                     </a>
                   </SheetTitle>
@@ -236,10 +250,7 @@ const Navbar1 = ({
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <NavigationMenuItem
-        key={item.title}
-        className="text-muted-foreground bg-transparent"
-      >
+      <NavigationMenuItem key={item.title}>
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="w-80 p-3">
@@ -274,7 +285,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
       href={item.url}
     >
       {item.title}
