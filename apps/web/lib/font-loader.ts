@@ -1,16 +1,20 @@
-import localFont from "next/font/local";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-export const fontKindAvenue = localFont({
-  src: "../public/fonts/Kind-Avenue.woff2",
-});
+// export const fontKindAvenue = localFont({
+//   src: "../public/fonts/Kind-Avenue.woff2",
+// });
 
-export const fontSans = Geist({
+export const fontSans = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export const fontMono = Geist_Mono({
+export const fontMono = Montserrat({
   subsets: ["latin"],
   variable: "--font-mono",
+});
+
+export const fontBase = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-base",
 });

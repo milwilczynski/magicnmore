@@ -30,7 +30,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@workspace/ui/components/sheet";
-import { fontKindAvenue } from "@/lib/font-loader";
+import { Logo } from "@/components/logo";
 
 interface MenuItem {
   title: string;
@@ -155,91 +155,91 @@ const Navbar1 = ({
   },
 }: Navbar1Props) => {
   return (
-    <section className="py-4 bg-white sticky top-0 z-50 w-full">
-      <div className="contain-layout px-2">
-        <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center">
-            <span
-              className={`${fontKindAvenue.className} text-3xl font-extralight `}
-            >
-              Magic & more
-            </span>
+    <section className="py-4 bg-white sticky top-0 flex justify-center items-center z-50 w-full ">
+      <div className="contain-layout w-full max-w-[1920px] px-2 flex">
+        <nav className="hidden w-full lg:flex justify-between">
+          <div className={"flex flex-1"} />
+          <div className={"flex flex-1 w-full justify-center gap-5"}>
+            <div className="flex items-center">
+              <Logo withCompany />
+            </div>
+            <div className="flex items-center">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  {menu.map((item) => renderMenuItem(item))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
           </div>
-          <div className="flex items-center">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {menu.map((item) => renderMenuItem(item))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-          <div className="flex gap-2">
+          <div className="flex flex-1 items-center gap-2 ml-auto justify-end">
             <Button variant={"ghost"} size="icon">
-              <ShoppingCart />
+              <ShoppingCart size={18} />
             </Button>
             <Button variant="ghost" size="icon">
-              <User2 />
+              <User2 size={18} />
             </Button>
           </div>
         </nav>
-        <div className="block lg:hidden">
+        <div className="w-full lg:hidden">
           <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
-              <span
-                className={`${fontKindAvenue.className} text-3xl font-extralight `}
-              >
-                Magic & more
-              </span>
-            </a>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <span
-                        className={`${fontKindAvenue.className} text-3xl font-extralight`}
-                      >
-                        Magic & more
-                      </span>
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="my-6 flex flex-col gap-6">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="flex w-full flex-col gap-4"
-                  >
-                    {menu.map((item) => renderMobileMenuItem(item))}
-                  </Accordion>
-                  <div className="border-t py-4">
-                    <div className="grid grid-cols-2 justify-start">
-                      {mobileExtraLinks.map((link, idx) => (
-                        <a
-                          key={idx}
-                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                          href={link.url}
-                        >
-                          {link.name}
-                        </a>
-                      ))}
+            <div className={"flex flex-1"} />
+            <div className={"flex flex-1 justify-center"}>
+              <a href={logo.url} className="flex items-center gap-2">
+                <div className="flex items-center">
+                  <Logo withCompany />
+                </div>
+              </a>
+            </div>
+            <div className={"flex flex-1 justify-end"}>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="size-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="overflow-y-auto">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <a href={logo.url} className="flex items-center gap-2">
+                        <div className="flex items-center">
+                          <Logo withCompany />
+                        </div>
+                      </a>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="my-6 flex flex-col gap-6">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="flex w-full flex-col gap-4"
+                    >
+                      {menu.map((item) => renderMobileMenuItem(item))}
+                    </Accordion>
+                    <div className="border-t py-4">
+                      <div className="grid grid-cols-2 justify-start">
+                        {mobileExtraLinks.map((link, idx) => (
+                          <a
+                            key={idx}
+                            className="inline-flex text-l h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+                            href={link.url}
+                          >
+                            {link.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <Button asChild variant="outline">
+                        <a href={auth.login.url}>{auth.login.text}</a>
+                      </Button>
+                      <Button asChild>
+                        <a href={auth.signup.url}>{auth.signup.text}</a>
+                      </Button>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.text}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.text}</a>
-                    </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
@@ -258,7 +258,7 @@ const renderMenuItem = (item: MenuItem) => {
               {item.items.map((subItem) => (
                 <li key={subItem.title}>
                   <a
-                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                    className="flex text select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                     href={subItem.url}
                   >
                     {subItem.icon}

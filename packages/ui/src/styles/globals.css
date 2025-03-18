@@ -29,7 +29,7 @@
         --chart-3: 128 100% 50%;
         --chart-4: 248 100% 50%;
         --chart-5: 308 100% 50%;
-        --radius: 0.75rem;
+        --radius: 0.3rem;
     }
 
     .dark {
@@ -78,26 +78,12 @@
     opacity: 20%;
 }
 
-/*best so far*/
-/*body {*/
-/*    background: linear-gradient(to right top, #e9d5f8, #ffffff, #ffe0ca);*/
-/*    !*animation: gradient-animation 30s ease infinite;*!*/
-/*    background-size: 300% 300%;*/
-/*}*/
 
 body {
-    background-image: linear-gradient(to left top, #a000ff, #ec00c1, #ff118f, #ff5e71, #f28a6c, #ed956e, #e8a072, #e3aa79, #eaa16a, #f1985d, #f88d52, #ff8148);
+    background: #E3FDF5;
+    background: linear-gradient(
+            to right,
+            #E3FDF5, #FFE6FA
+    );
 }
 
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 25%;
-    }
-    50% {
-        background-position: 50% 25%;
-    }
-    100% {
-        background-position: 0% 25%;
-    }
-}
