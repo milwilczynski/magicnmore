@@ -2,7 +2,9 @@ import "@workspace/ui/globals.css";
 import { Providers } from "@/components/providers";
 import "./global.css";
 import { fontMono, fontSans } from "@/lib/font-loader";
-import { Navbar1 } from "@/components/navigation";
+import { NavbarSection } from "@/components/navigation";
+import FooterSection from "@workspace/ui/components/footer";
+import { Logo } from "@/components/logo";
 
 export default function RootLayout({
   children,
@@ -17,8 +19,17 @@ export default function RootLayout({
         {/*<div className={"w-full h-full bg-gradient-local absolute"} />*/}
         {/*<div className={"contain-layout absolute w-full min-h-full"}>*/}
         <Providers>
-          <Navbar1 />
+          <NavbarSection />
           {children}
+          <FooterSection>
+            <Logo
+              companyProps={{
+                withCompany: true,
+                companyClassNames: "text-base",
+              }}
+              size={64}
+            />
+          </FooterSection>
         </Providers>
         {/*</div>*/}
       </body>

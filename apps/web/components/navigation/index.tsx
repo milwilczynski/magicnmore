@@ -40,7 +40,7 @@ interface MenuItem {
   items?: MenuItem[];
 }
 
-interface Navbar1Props {
+interface NavbarSectionProps {
   logo?: {
     url: string;
     src: string;
@@ -64,7 +64,7 @@ interface Navbar1Props {
   };
 }
 
-const Navbar1 = ({
+const NavbarSection = ({
   logo = {
     url: "https://www.shadcnblocks.com",
     src: "https://www.shadcnblocks.com/images/block/block-1.svg",
@@ -153,15 +153,15 @@ const Navbar1 = ({
     login: { text: "Log in", url: "#" },
     signup: { text: "Sign up", url: "#" },
   },
-}: Navbar1Props) => {
+}: NavbarSectionProps) => {
   return (
-    <section className="py-4 bg-white sticky top-0 flex justify-center items-center z-50 w-full ">
+    <section className="py-4 bg-primary-foreground sticky top-0 flex justify-center items-center z-50 w-full ">
       <div className="contain-layout w-full max-w-[1920px] px-2 flex">
         <nav className="hidden w-full lg:flex justify-between">
           <div className={"flex flex-1"} />
           <div className={"flex flex-1 w-full justify-center gap-5"}>
             <div className="flex items-center">
-              <Logo withCompany />
+              <Logo />
             </div>
             <div className="flex items-center">
               <NavigationMenu>
@@ -186,7 +186,7 @@ const Navbar1 = ({
             <div className={"flex flex-1 justify-center"}>
               <a href={logo.url} className="flex items-center gap-2">
                 <div className="flex items-center">
-                  <Logo withCompany />
+                  <Logo />
                 </div>
               </a>
             </div>
@@ -202,7 +202,7 @@ const Navbar1 = ({
                     <SheetTitle>
                       <a href={logo.url} className="flex items-center gap-2">
                         <div className="flex items-center">
-                          <Logo withCompany />
+                          <Logo />
                         </div>
                       </a>
                     </SheetTitle>
@@ -285,7 +285,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
+      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
       href={item.url}
     >
       {item.title}
@@ -330,4 +330,4 @@ const renderMobileMenuItem = (item: MenuItem) => {
   );
 };
 
-export { Navbar1 };
+export { NavbarSection };
