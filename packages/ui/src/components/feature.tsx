@@ -93,19 +93,19 @@ const Feature108 = ({
           </h1>
           <p className="text-muted-foreground">{description}</p>
         </div>
-        <Tabs defaultValue={tabs[0]?.value} className="lg:mt-8 mt-[6rem]">
+        <Tabs defaultValue={tabs[0]?.value} className="sm:mt-8 mt-[6rem]">
           <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-primary-foreground/70 data-[state=active]:text-primary"
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-primary-foreground/80 data-[state=active]:text-primary"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto lg:mt-8 mt-[5.5rem] max-w-screen-xl rounded-2xl bg-primary-foreground/80 p-6 lg:p-16">
+          <div className="mx-auto sm:mt-8 mt-[5.5rem] max-w-screen-xl rounded-2xl bg-primary-foreground/80 p-6 lg:p-16">
             <div className="relative">
               {tabs.map((tab) => (
                 <TabsContent
