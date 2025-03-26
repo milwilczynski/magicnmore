@@ -155,7 +155,7 @@ const NavbarSection = ({
   },
 }: NavbarSectionProps) => {
   return (
-    <section className="py-4 bg-primary-foreground sticky top-0 flex justify-center items-center z-50 w-full ">
+    <section className="py-4 bg-primary-foreground sticky top-0 flex justify-center items-center z-50 w-full border-b-2 border-muted">
       <div className="contain-layout w-full max-w-[1920px] px-2 flex">
         <nav className="hidden w-full lg:flex justify-between">
           <div className={"flex flex-1"} />

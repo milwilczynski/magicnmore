@@ -9,98 +9,33 @@ import {
   TabsList,
   TabsTrigger,
 } from "@workspace/ui/components/tabs";
-import { Separator } from "@workspace/ui/components/separator";
-import {
-  ArrowRight,
-  ChevronRight,
-  Facebook,
-  Heart,
-  Instagram,
-  Menu,
-  Search,
-  ShoppingBag,
-  Twitter,
-  User,
-  X,
-} from "lucide-react";
+import { ArrowRight, ChevronRight, Heart, Instagram, X } from "lucide-react";
 
 export default function ShopFrontpage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Announcement Bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-4 text-center text-sm">
-        <p>Free shipping on orders over $50 | Use code SUMMER25 for 25% off</p>
-      </div>
-
-      {/* Header */}
-      <header className="border-b bg-background">
-        <div className="container py-4">
-          <div className="flex items-center justify-between">
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
-
-            <Link
-              href="#"
-              className="flex items-center space-x-2 mx-auto md:mx-0"
-            >
-              <span className="text-2xl font-bold tracking-tight">MINIMAL</span>
-            </Link>
-
-            <nav className="hidden md:flex items-center gap-8 mx-auto">
-              <Link href="#" className="text-sm font-medium hover:text-primary">
-                New In
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:text-primary">
-                Women
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:text-primary">
-                Men
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:text-primary">
-                Accessories
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:text-primary">
-                Sale
-              </Link>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon" className="hidden md:flex">
-                <Search className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hidden md:flex">
-                <User className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingBag className="h-5 w-5" />
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center">
-                  2
-                </Badge>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <div className="flex min-h-screen flex-col pt-16">
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 md:order-1 bg-muted">
+            <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 md:order-1 ">
               <div className="max-w-md">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 ">
                   Minimal Summer Collection
                 </h1>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p className="text-lg text-muted-foreground mb-8 ">
                   Effortless style for the modern wardrobe. Timeless pieces
                   designed to last.
                 </p>
                 <div className="flex gap-4">
-                  <Button size="lg" className="rounded-none">
+                  <Button
+                    size="lg"
+                    className="rounded-none"
+                    variant={"default"}
+                  >
                     Shop Women
                   </Button>
-                  <Button size="lg" variant="outline" className="rounded-none">
+                  <Button size="lg" variant="ghost" className="rounded-none">
                     Shop Men
                   </Button>
                 </div>
@@ -108,7 +43,7 @@ export default function ShopFrontpage() {
             </div>
             <div className="relative h-[50vh] md:h-auto order-1 md:order-2">
               <Image
-                src="/placeholder.svg?height=800&width=600"
+                src="https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=800&width=600"
                 alt="Minimal fashion collection"
                 fill
                 className="object-cover"
@@ -120,8 +55,8 @@ export default function ShopFrontpage() {
 
         {/* Featured Categories */}
         <section className="py-16 container">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Shop by Category
+          <h2 className="text-3xl font-bold mb-8 text-center ">
+            <span className="border-b-0 border-primary">Shop by Category</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredCategories.map((category) => (
@@ -132,7 +67,10 @@ export default function ShopFrontpage() {
               >
                 <div className="aspect-[3/4] relative overflow-hidden">
                   <Image
-                    src={category.image || "/placeholder.svg"}
+                    src={
+                      category.image ||
+                      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg"
+                    }
                     alt={category.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -152,8 +90,8 @@ export default function ShopFrontpage() {
         </section>
 
         {/* New Arrivals Tabs */}
-        <section className="py-16 bg-muted">
-          <div className="container">
+        <section className="py-16 bg-primary-foreground/80 px-16">
+          <div className="container w-full">
             <h2 className="text-3xl font-bold mb-8 text-center">
               New Arrivals
             </h2>
@@ -220,7 +158,7 @@ export default function ShopFrontpage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative aspect-square">
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=600"
                   alt="Sustainable fashion"
                   fill
                   className="object-cover"
@@ -270,7 +208,7 @@ export default function ShopFrontpage() {
         </section>
 
         {/* Instagram Feed */}
-        <section className="py-16 bg-muted">
+        <section className="py-16 bg-primary-foreground/80 px-16">
           <div className="container">
             <div className="flex flex-col items-center mb-8">
               <h2 className="text-3xl font-bold mb-2 text-center">
@@ -288,7 +226,10 @@ export default function ShopFrontpage() {
                   className="group relative aspect-square overflow-hidden"
                 >
                   <Image
-                    src={post.image || "/placeholder.svg"}
+                    src={
+                      post.image ||
+                      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg"
+                    }
                     alt={`Instagram post ${index + 1}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -326,204 +267,6 @@ export default function ShopFrontpage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-background border-t">
-        <div className="container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4">MINIMAL</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Minimal is a contemporary fashion brand focused on clean design
-                and sustainable practices.
-              </p>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon">
-                  <Instagram className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon">
-                  <Facebook className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon">
-                  <Twitter className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4">Shop</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    New Arrivals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Women
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Men
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Accessories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Sale
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4">Help</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Customer Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Shipping & Returns
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Size Guide
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4">About</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Our Story
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Sustainability
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Press
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <Separator className="my-8" />
-
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-muted-foreground">
-              © 2025 MINIMAL. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-4 mt-4 md:mt-0">
-              <Image
-                src="/placeholder.svg?height=30&width=40"
-                alt="Visa"
-                width={40}
-                height={30}
-              />
-              <Image
-                src="/placeholder.svg?height=30&width=40"
-                alt="Mastercard"
-                width={40}
-                height={30}
-              />
-              <Image
-                src="/placeholder.svg?height=30&width=40"
-                alt="PayPal"
-                width={40}
-                height={30}
-              />
-              <Image
-                src="/placeholder.svg?height=30&width=40"
-                alt="Apple Pay"
-                width={40}
-                height={30}
-              />
-            </div>
-          </div>
-        </div>
-      </footer>
-
       {/* Quick View Modal (simplified) */}
       <div className="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
         <div className="bg-background p-6 max-w-4xl w-full max-h-[90vh] overflow-auto">
@@ -543,12 +286,16 @@ export default function ShopFrontpage() {
 }
 
 // Product Card Component
+// @ts-ignore
 function ProductCard({ product }) {
   return (
     <div className="group">
       <div className="relative aspect-[3/4] overflow-hidden bg-muted mb-3">
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={
+            product.image ||
+            "https://shadcnblocks.com/images/block/placeholder-dark-2.svg"
+          }
           alt={product.name}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -590,11 +337,20 @@ function ProductCard({ product }) {
 // Sample data
 const featuredCategories = [
   {
-    name: "Women's Collection",
-    image: "/placeholder.svg?height=600&width=400",
+    name: "Flowers",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=400",
   },
-  { name: "Men's Collection", image: "/placeholder.svg?height=600&width=400" },
-  { name: "Accessories", image: "/placeholder.svg?height=600&width=400" },
+  {
+    name: "Gifts",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=400",
+  },
+  {
+    name: "Ornaments",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=400",
+  },
 ];
 
 const newArrivals = [
@@ -603,7 +359,8 @@ const newArrivals = [
     name: "Oversized Cotton Shirt",
     category: "Women",
     price: 89.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
     badge: "New",
   },
   {
@@ -611,7 +368,8 @@ const newArrivals = [
     name: "Linen Blend Trousers",
     category: "Men",
     price: 119.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
   },
   {
     id: 3,
@@ -619,7 +377,8 @@ const newArrivals = [
     category: "Men",
     price: 49.99,
     originalPrice: 69.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
     badge: "Sale",
   },
   {
@@ -627,28 +386,32 @@ const newArrivals = [
     name: "Leather Crossbody Bag",
     category: "Accessories",
     price: 159.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
   },
   {
     id: 5,
     name: "Pleated Midi Skirt",
     category: "Women",
     price: 99.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
   },
   {
     id: 6,
     name: "Slim Fit Denim Jeans",
     category: "Men",
     price: 129.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
   },
   {
     id: 7,
     name: "Silk Scarf",
     category: "Accessories",
     price: 79.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
   },
   {
     id: 8,
@@ -656,16 +419,35 @@ const newArrivals = [
     category: "Women",
     price: 139.99,
     originalPrice: 179.99,
-    image: "/placeholder.svg?height=600&width=450",
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=600&width=450",
     badge: "Sale",
   },
 ];
 
 const instagramPosts = [
-  { image: "/placeholder.svg?height=300&width=300" },
-  { image: "/placeholder.svg?height=300&width=300" },
-  { image: "/placeholder.svg?height=300&width=300" },
-  { image: "/placeholder.svg?height=300&width=300" },
-  { image: "/placeholder.svg?height=300&width=300" },
-  { image: "/placeholder.svg?height=300&width=300" },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
+  {
+    image:
+      "https://shadcnblocks.com/images/block/placeholder-dark-2.svg?height=300&width=300",
+  },
 ];

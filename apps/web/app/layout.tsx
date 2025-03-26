@@ -5,6 +5,7 @@ import { fontMono, fontSans } from "@/lib/font-loader";
 import { NavbarSection } from "@/components/navigation";
 import FooterSection from "@workspace/ui/components/footer";
 import { Logo } from "@/components/logo";
+import { AnnouncementBar } from "@workspace/ui/components/announcement-bar";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
         {/*<div className={"contain-layout absolute w-full min-h-full"}>*/}
         <Providers>
           <NavbarSection />
+          <AnnouncementBar />
           {children}
           <FooterSection>
             <Logo
@@ -31,7 +33,6 @@ export default function RootLayout({
             />
           </FooterSection>
         </Providers>
-        {/*</div>*/}
       </body>
     </html>
   );
