@@ -31,6 +31,7 @@ import {
   SheetTrigger,
 } from "@workspace/ui/components/sheet";
 import { Logo } from "@/components/logo";
+import { JSX } from "react";
 
 interface MenuItem {
   title: string;

@@ -10,8 +10,10 @@ import {
   TabsTrigger,
 } from "@workspace/ui/components/tabs";
 import { ArrowRight, ChevronRight, Heart, Instagram, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ShopFrontpage() {
+  const t = useTranslations("Homepage");
   return (
     <div className="flex min-h-screen flex-col pt-16">
       <main className="flex-1">
@@ -52,11 +54,12 @@ export default function ShopFrontpage() {
             </div>
           </div>
         </section>
-
         {/* Featured Categories */}
         <section className="py-16 container">
           <h2 className="text-3xl font-bold mb-8 text-center ">
-            <span className="border-b-0 border-primary">Shop by Category</span>
+            <span className="border-b-0 border-primary">
+              {t("shop-by-category")}
+            </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredCategories.map((category) => (
@@ -88,7 +91,6 @@ export default function ShopFrontpage() {
             ))}
           </div>
         </section>
-
         {/* New Arrivals Tabs */}
         <section className="py-16 bg-primary-foreground/80 px-16">
           <div className="container w-full">

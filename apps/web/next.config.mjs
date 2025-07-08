@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+import createNextIntlPlugin from "next-intl/plugin";
+
+const nextIntl = createNextIntlPlugin("./lib/i18n/request.ts");
+
 const nextConfig = {
   transpilePackages: ["@workspace/ui"],
   webpack(config) {
@@ -21,4 +25,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default nextIntl(nextConfig);
