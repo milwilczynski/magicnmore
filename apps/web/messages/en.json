@@ -3,5 +3,18 @@
   },
   "Homepage": {
     "shop-by-category": "Shop by Category"
+  },
+  "auth": {
+    "login": {
+      "preferred": "Choose your preferred sign-in method",
+      "or-continue": "Or continue with email",
+      "email": "Email",
+      "email-hint": "Enter your email",
+      "password": "Password",
+      "password-hint": "Enter your password",
+      "forgot-password": "Forgot your password?",
+      "new-user": "New to our platform?",
+      "create-account": "Create an account"
+    }
   }
 }

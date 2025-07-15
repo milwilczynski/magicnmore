@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Book,
   Menu,
@@ -32,6 +34,7 @@ import {
 } from "@workspace/ui/components/sheet";
 import { Logo } from "@/components/logo";
 import React, { JSX } from "react";
+import { signIn } from "next-auth/react";
 
 interface MenuItem {
   title: string;
@@ -176,7 +179,14 @@ const NavbarSection = ({
             <Button variant={"ghost"} size="icon">
               <ShoppingCart size={18} />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                console.log("clicked");
+                signIn();
+              }}
+            >
               <User2 size={18} />
             </Button>
           </div>

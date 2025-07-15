@@ -13,7 +13,8 @@ export type LogoProps = {
   companyProps?: LogoCompanyProps;
 };
 
-const baseCompanyClassName = "text-sm ml-0.5 mt-0.5 font-bold";
+const baseCompanyClassName =
+  "text-sm ml-0.5 mt-0.5 font-bold flex flex-col justify-start items-start !leading-none";
 
 const Company = ({
   withCompany = true,
@@ -22,14 +23,15 @@ const Company = ({
   if (!withCompany) return null;
 
   return (
-    <span
+    <div
       className={cn(fontBase.variable, baseCompanyClassName, companyClassNames)}
     >
-      <span className={"text-primary"}>MAGIC </span>
-      <br />
-      <span>&</span>
-      <span className={"ml-0.5"}>MORE</span>
-    </span>
+      <span className={"text-primary"}>MAGIC</span>
+      <div>
+        <span>&</span>
+        <span className={"ml-0.5"}>MORE</span>
+      </div>
+    </div>
   );
 };
 

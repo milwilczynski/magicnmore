@@ -3,5 +3,19 @@
   },
   "Homepage": {
     "shop-by-category": "Zakupy według kategorii"
+  },
+  "auth": {
+    "sign-in": "Zaloguj się",
+    "login": {
+      "preferred": "Wybierz swoją metodę logowania",
+      "or-continue": "lub zaloguj się mailem",
+      "email": "Email",
+      "email-hint": "Podaj swój email",
+      "password": "Hasło",
+      "password-hint": "Wpisz swoje hasło",
+      "forgot-password": "Nie pamiętasz hasła?",
+      "new-user": "Pierwszy raz u nas?",
+      "create-account": "Stwóz konto!"
+    }
   }
 }

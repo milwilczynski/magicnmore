@@ -71,11 +71,13 @@
     }
 }
 
-.bg-gradient-local {
-    background: radial-gradient(#f9f871, #ffffff, #ffa274);
-    background-size: 400% 400%;
-    animation: gradient-animation 20s ease infinite;
-    opacity: 20%;
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 
@@ -85,5 +87,7 @@ body {
             to right,
             #E3FDF5, #FFE6FA
     );
+    background-size: 200% 200%;
+    animation: gradient 20s ease infinite;
 }
 

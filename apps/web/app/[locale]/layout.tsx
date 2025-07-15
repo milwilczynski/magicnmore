@@ -1,5 +1,5 @@
+import React from "react";
 import "@workspace/ui/styles/globals.css";
-import { Providers } from "@/components/providers";
 import "./global.css";
 import { fontMono, fontSans } from "@/lib/font-loader";
 import { NavbarSection } from "@/components/navigation";
@@ -9,6 +9,13 @@ import { AnnouncementBar } from "@workspace/ui/components/announcement-bar";
 import { hasLocale } from "next-intl";
 import { routing } from "@/lib/i18n/routing";
 import { notFound } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import { getMessages } from "next-intl/server";
+import {
+  ClientSideProviders,
+  ServerSideProviders,
+} from "@/components/providers";
 
 export default async function RootLayout({
   children,
@@ -17,30 +24,39 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
+  const session = await getServerSession(authOptions);
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
-        <Providers locale={locale}>
-          <NavbarSection />
-          <AnnouncementBar />
-          {children}
-          <FooterSection>
-            <Logo
-              companyProps={{
-                withCompany: true,
-                companyClassNames: "text-base",
-              }}
-              size={64}
-            />
-          </FooterSection>
-        </Providers>
+        <ServerSideProviders
+          intlSettings={{
+            locale: locale,
+            messages: messages,
+          }}
+        >
+          <ClientSideProviders session={session}>
+            <NavbarSection />
+            <AnnouncementBar />
+            {children}
+            <FooterSection>
+              <Logo
+                companyProps={{
+                  withCompany: true,
+                  companyClassNames: "text-base",
+                }}
+                size={64}
+              />
+            </FooterSection>
+          </ClientSideProviders>
+        </ServerSideProviders>
       </body>
     </html>
   );
