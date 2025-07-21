@@ -16,6 +16,7 @@ import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { FacebookIcon, GoogleIcon } from "@workspace/ui/icons";
 import { Logo } from "@/components/logo";
 import { useTranslations } from "next-intl";
+import { signIn } from "next-auth/react";
 
 export default function LoginBlock2() {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,10 +44,18 @@ export default function LoginBlock2() {
         <CardContent className="space-y-6">
           {/* Social Login Buttons */}
           <div className="flex flex-row gap-2 justify-center">
-            <Button variant="outline" className="w-full gap-3 h-12 border-2">
+            <Button
+              variant="outline"
+              className="w-full gap-3 h-12 border-2"
+              onClick={() => signIn("google")}
+            >
               <GoogleIcon />
             </Button>
-            <Button variant="outline" className="w-full gap-3 h-12 border-2">
+            <Button
+              variant="outline"
+              className="w-full gap-3 h-12 border-2"
+              onClick={() => signIn("facebook")}
+            >
               <FacebookIcon />
             </Button>
           </div>
@@ -104,7 +113,7 @@ export default function LoginBlock2() {
             </div>
 
             <Button type="submit" className="w-full h-12">
-              Sign In
+              {t("sign-in")}
             </Button>
           </form>
 

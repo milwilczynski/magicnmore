@@ -14,7 +14,8 @@
       "password-hint": "Enter your password",
       "forgot-password": "Forgot your password?",
       "new-user": "New to our platform?",
-      "create-account": "Create an account"
+      "create-account": "Create an account",
+      "sign-in": "Sign In"
     }
   }
 }

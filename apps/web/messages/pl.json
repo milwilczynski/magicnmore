@@ -15,7 +15,8 @@
       "password-hint": "Wpisz swoje hasło",
       "forgot-password": "Nie pamiętasz hasła?",
       "new-user": "Pierwszy raz u nas?",
-      "create-account": "Stwóz konto!"
+      "create-account": "Stwóz konto!",
+      "sign-in": "Zaloguj"
     }
   }
 }
