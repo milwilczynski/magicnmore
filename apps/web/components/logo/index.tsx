@@ -2,6 +2,7 @@ import React from "react";
 import SVGLogo from "@/public/assets/logo.svg";
 import { fontBase } from "@/lib/font-loader";
 import { cn } from "@workspace/ui/lib/utils";
+import { Link } from "@/lib/i18n/navigation";
 
 export type LogoCompanyProps = {
   withCompany?: boolean;
@@ -11,10 +12,11 @@ export type LogoProps = {
   size?: number;
   logoClassName?: React.ComponentProps<"div">["className"];
   companyProps?: LogoCompanyProps;
+  isLink?: boolean;
 };
 
 const baseCompanyClassName =
-  "text-sm ml-0.5 mt-0.5 font-bold flex flex-col justify-start items-start !leading-none";
+  "text-sm ml-0.5 mt-0.5 font-bold flex flex-col justify-start items-start !leading-none !select-none";
 
 const Company = ({
   withCompany = true,
@@ -37,16 +39,23 @@ const Company = ({
 
 const baseLogoClassName = "flex flex-row justify-center items-center";
 
-export const Logo = ({ companyProps, logoClassName, size = 48 }: LogoProps) => {
+export const Logo = ({
+  companyProps,
+  logoClassName,
+  size = 48,
+  isLink = true,
+}: LogoProps) => {
   return (
-    <div className={cn(baseLogoClassName, logoClassName)}>
-      <SVGLogo
-        className={`h-[var(--size)]`}
-        style={{
-          "--size": `${size}px`,
-        }}
-      />
-      <Company {...companyProps} />
-    </div>
+    <Link href={"/"} style={{ pointerEvents: isLink ? "auto" : "none" }}>
+      <div className={cn(baseLogoClassName, logoClassName)}>
+        <SVGLogo
+          className={`h-[var(--size)]`}
+          style={{
+            "--size": `${size}px`,
+          }}
+        />
+        <Company {...companyProps} />
+      </div>
+    </Link>
   );
 };

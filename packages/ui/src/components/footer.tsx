@@ -33,7 +33,7 @@ export default function FooterSection({
   ...props
 }: PropsWithChildren<FooterSectionProps>) {
   return (
-    <footer className="py-16 md:py-32 bg-primary-foreground/80">
+    <footer className="py-16 bg-primary-foreground/80">
       <div className="mx-auto max-w-5xl px-6">
         <a href="/" aria-label="go home" className="mx-auto block size-fit">
           {children}

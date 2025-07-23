@@ -23,7 +23,7 @@ export default function LoginBlock2() {
   const t = useTranslations("auth.login");
 
   return (
-    <section className="w-full min-h-[62vh] flex items-center justify-center p-4">
+    <section className="w-full h-[100vh] flex items-center justify-center p-4">
       <Card className="w-full max-w-md border-2 shadow-2xl dark:bg-card/95 backdrop-blur-sm">
         <CardHeader className="space-y-4 text-center">
           <div className="space-y-2">
